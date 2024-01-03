@@ -1,0 +1,17 @@
+version: "3.3"
+
+# networks:
+#   app:
+#     - bridge
+
+# volumes:
+#   app
+
+services:
+  app:
+    image: fiverdemo-single:stage
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    ports:
+      - 3000:3000
