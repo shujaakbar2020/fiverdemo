@@ -17,14 +17,14 @@ function App() {
         >
           Hire Me Now
         </a>
-        <a
+        {/* <a
           className="App-link"
           href="https://shujaakbar.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           Visit My Portfolio
-        </a>
+        </a> */}
       </header>
     </div>
   );
