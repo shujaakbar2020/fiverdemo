@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiverr
+  namespace: fiverr
+spec:
+  selector:
+    matchLabels:
+      app: fiverr
+  template:
+    metadata:
+      labels:
+        app: fiverr
+    spec:
+      containers:
+      - name: fiverr
+        image: saakbar/fiverdemo:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "256m"
+          requests:
+            memory: "64Mi"
+            cpu: "128m"
+        ports:
+        - containerPort: 80

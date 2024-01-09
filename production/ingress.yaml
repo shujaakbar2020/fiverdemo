@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fiverr
+  labels:
+    name: fiverr
+  namespace: fiverr
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - fiverr.shujaakbar.com
+      secretName: fiverr-tls
+  rules:
+  - host: fiverr.shujaakbar.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: fiverr
+            port: 
+              number: 80
